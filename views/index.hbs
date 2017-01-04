@@ -1,0 +1,30 @@
+<div class="container">
+  
+  <div class="row">
+    <div class=".col-md-6 .offset-md-3">
+      {{#if first }}
+      <h3 text-color="gray">Previous</h3>
+      {{ else }}
+      <a href={{ prev }}><h3>Previous</h3></a>
+      {{/if }}
+      {{#if latest }}
+      <h3 text-color="gray">Next</h3>
+      {{ else }}
+      <a href={{ next }}><h3>Next</h3></a>
+      {{/if }}
+      <h1>{{ comic.title }}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class=".col-md-6 .offset-md-3">
+      <img src={{ comic.imagePath }} alt={{ comic.alt }} title={{ comic.alt }} />
+    </div>
+  </div>
+  <div class="row">
+    <div class=".col-md-6 .offset-md-3">
+      <h3>description:</h3>
+      <p>{{ comic.description }}</p>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,18 @@
+stuff to do:
+
+ - make an admin page to add comics and stuff (use passport!)
+ 
+ - ask israel how he wants it styled, and what extra features to add.
+ 
+ - add dates to the model and individual comics :)
+ 
+ -deal with urls for comics that don't exist :p
+ 
+ -make controllers or whatever is necessary to take all the logic out of the routes file, ALSO organize your routes and views into 
+    files that make sense
+    
+-add to github
+
+- add CSRF security to the admin page, and creat an admin login with encrypted password
+
+ -add MongoStore before this goes live!!!!!!!

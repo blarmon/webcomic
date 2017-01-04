@@ -1,0 +1,39 @@
+.container {
+    background-color: #f2f4f7;
+    width: 80%;
+}
+
+.footer {
+    border-top: black solid 2px;
+    margin-top: 8px;
+    background-color: white;
+    height: 35px;
+    width: 81%;
+}
+
+.footer-text {
+    padding-left: 30px;
+    color: black;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    display: block;
+    margin: auto;
+}
+
+form {
+    margin-top: 8px;
+}
+
+.archive {
+    margin-top: 8px;
+}
+
+.date {
+    margin-left: 4px;
+    font-size: 75%;
+}

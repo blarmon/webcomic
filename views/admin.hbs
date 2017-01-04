@@ -1,0 +1,34 @@
+{{#if newComic }}
+    {{ this.newComic.imagepath }}
+    {{ this.newComic.title }}
+    {{ this.newComic.alt }}
+    {{ this.newComic.description }}
+    {{ this.newComic.comicNumber }}
+{{/if }}
+
+
+<div class="container">
+    <form action='/admin' method='post'>
+         <div class="form-group">
+            <label for="imagepath">Image Path</label>
+            <input type="text" id="imagepath" name="imagepath" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="alt">Alt. Text</label>
+            <input type="text" id="alt" name="alt" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="description">Description</label>
+            <input type="text" id="description" name="description" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="comicnumber">Comic Number</label>
+            <input type="text" id="comicnumber" name="comicnumber" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit New Comic</button>
+    </form>
+</div>
