@@ -18,7 +18,8 @@ router.post('/admin', function(req, res, next) {
       title: req.body.title,
       alt: req.body.alt,
       description: req.body.description,
-      comicNumber: req.body.comicnumber
+      comicNumber: req.body.comicnumber,
+      date: req.body.date
     });
     
     newComic.save(function(err, result){
@@ -37,7 +38,7 @@ router.get('/archive', function(req, res, next) {
       if (err) {
           //res.render('error.hbs')
       }
-      var reverse = docs.reverse();
+      docs.reverse();
       res.render('archive', { comics: docs, title: 'archive'});
   });
 });
@@ -96,12 +97,20 @@ router.get('/:comicNumber', function(req, res, next) {
               thisComic = docs[i];
           }
       }
+      //the done variable is here to make sure that headers aren't set more than once, which obviously crashes the site.
+      //redirect is asynchronous, so he code will keep running after a call to it.
+      var done = false;
+      if (comicNumber > numberOfComics || comicNumber < 0 || isNaN(comicNumber)){
+            res.render('noComic');
+            done = true;
+      }
       //if we're on the latest comic, redirect to the '/latest' URL, because it does a couple of things this route does not. 
-      if (thisComic.comicNumber == numberOfComics){
+      if (!done && thisComic.comicNumber == numberOfComics){
         res.redirect('/latest');
       }
-      //this else HAS to be here, or else the redirect seems to get called multiple times and we get an error?  I do not understand why.
-      else {
+      //this else HAS to be here, or else the redirect seems to get called multiple times and we get an error?  something
+      //to do with the asynchronous nature of the function probably
+      else if (!done) {
           console.log(first);
         res.render('index', { title: 'Webcomic site nice', comic: thisComic, latest: false, first: first, prev: prevComic, next: nextComic }); 
       }

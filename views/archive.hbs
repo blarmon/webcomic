@@ -1,7 +1,7 @@
 <div row="container">
     {{#each comics }}
         <ul class="archive">
-            <a href="#"><li class="archiveli">{{ this.title }}</a> -<span class="date">12/29/201</span></li>
+            <a href="/{{ this.comicNumber }}"><li class="archiveli">{{ this.title }}</a> -<span class="date">{{ this.date }}</span></li>
         </ul>
     {{/each }}
 </div>

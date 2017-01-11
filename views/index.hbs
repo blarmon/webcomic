@@ -1,5 +1,6 @@
-<div class="container">
+{{#if comic}}
   
+<div class="container">
   <div class="row">
     <div class=".col-md-6 .offset-md-3">
       {{#if first }}
@@ -28,3 +29,9 @@
   </div>
 </div>
 </div>
+
+{{ else }}
+
+didn't find nothin buddy
+
+{{/if }}

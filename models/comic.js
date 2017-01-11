@@ -9,9 +9,11 @@ var schema = new Schema({
 	
 	alt: { type: String, required: true }, 
 
-	description: {type: String, require: false},
+	description: {type: String, required: false},
 
-	comicNumber: { type: Number, required: true }
+	comicNumber: { type: Number, required: true },
+	
+	date: { type: String, required: true }
 
 });
 
